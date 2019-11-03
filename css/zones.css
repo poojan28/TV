@@ -1,0 +1,116 @@
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
+.zone-footer,
+.zone-tv,
+.zone-vertical {
+  display: none; }
+
+.fm-zones {
+  display: grid;
+  width: 100vw;
+  height: 100vh; }
+  .fm-zones .zone-vertical {
+    grid-area: sidebar;
+    background-color: #e4423c; }
+  .fm-zones .zone-footer {
+    background-color: #6c91cf;
+    grid-area: footer; }
+  .fm-zones .zone-tv {
+    background-color: #434343;
+    color: #fff;
+    grid-area: tv; }
+  .fm-zones.has-sidebar .zone-vertical, .fm-zones.has-footer .zone-footer, .fm-zones.has-tv .zone-tv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+  .fm-zones.has-sidebar {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "sidebar"; }
+  .fm-zones.has-footer {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "footer"; }
+    .fm-zones.has-footer .zone-footer {
+      overflow: hidden; }
+      .fm-zones.has-footer .zone-footer div {
+        display: block;
+        width: 200%;
+        position: absolute;
+        overflow: hidden;
+        animation: marquee 20s linear infinite; }
+        .fm-zones.has-footer .zone-footer div span {
+          display: inline-block; }
+  .fm-zones.has-sidebar.has-footer {
+    grid-template-rows: 1fr 15vh;
+    grid-template-columns: 1fr;
+    grid-template-areas: "sidebar" "footer"; }
+  .fm-zones.has-tv {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "tv"; }
+    .fm-zones.has-tv.has-footer {
+      grid-template-rows: 1fr 15vh;
+      grid-template-columns: 1fr;
+      grid-template-areas: "tv" "footer"; }
+    .fm-zones.has-tv.has-sidebar {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 16vw;
+      grid-template-areas: "tv sidebar"; }
+      .fm-zones.has-tv.has-sidebar.right-sidebar {
+        grid-template-areas: "tv sidebar "; }
+      .fm-zones.has-tv.has-sidebar.left-sidebar {
+        grid-template-columns: 16vw 1fr;
+        grid-template-areas: "sidebar tv"; }
+      .fm-zones.has-tv.has-sidebar.has-footer {
+        grid-template-rows: 1fr 15vh;
+        grid-template-columns: 1fr 16vw;
+        grid-template-areas: "tv sidebar" "footer footer"; }
+        .fm-zones.has-tv.has-sidebar.has-footer.right-sidebar {
+          grid-template-areas: "tv sidebar " "footer footer";
+          grid-template-columns: 1fr 16vw; }
+        .fm-zones.has-tv.has-sidebar.has-footer.sidebar-fullheight {
+          grid-template-areas: "tv sidebar" "footer sidebar"; }
+        .fm-zones.has-tv.has-sidebar.has-footer.left-sidebar {
+          grid-template-rows: 1fr 15vh;
+          grid-template-columns: 16vw 1fr;
+          grid-template-areas: "sidebar tv" "footer footer"; }
+          .fm-zones.has-tv.has-sidebar.has-footer.left-sidebar.sidebar-fullheight {
+            grid-template-areas: "sidebar tv" "sidebar footer"; }
+
+/* Move it (define the animation) */
+@-moz-keyframes marquee-rtl {
+  0% {
+    -moz-transform: translateX(100%); }
+  100% {
+    -moz-transform: translateX(-100%); } }
+
+@-webkit-keyframes marquee-rtl {
+  0% {
+    -webkit-transform: translateX(100%); }
+  100% {
+    -webkit-transform: translateX(-100%); } }
+
+@keyframes marquee-rtl {
+  0% {
+    -moz-transform: translateX(100%);
+    /* Firefox bug fix */
+    -webkit-transform: translateX(100%);
+    /* Firefox bug fix */
+    transform: translateX(100%); }
+  100% {
+    -moz-transform: translateX(-100%);
+    /* Firefox bug fix */
+    -webkit-transform: translateX(-100%);
+    /* Firefox bug fix */
+    transform: translateX(-100%); } }
+
+@keyframes marquee {
+  0% {
+    left: 0; }
+  100% {
+    left: -100%; } }

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Follow Media</title>
+    <link rel="stylesheet" href="css/zones.css">
+    <link rel="stylesheet" href="css/widget-media.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/svg.min.js"></script>
+    <!-- <script src="./../js/widget_media.js"></script> -->
+    <script src="js/widget_ticker.js"></script>
+    <!-- *********** start slider link*******************8 -->
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    <!-- *********** end slider link*******************8 -->
+    
+   
+</head>
+
+<body>
+    <div id="fm-zones" class="fm-zones has-tv  has-sidebar right-sidebar ">
+        <div class="zone zone-tv">
+
+        </div>
+        <div class="zone zone-vertical">
+
+            <!-- <div id="widget1">
+                <img id="widget1--img" src="media/side-ad.png"
+                    class="widget-media media-type-img" style=""/> -->
+                <!-- <img id="widget1-img-preload" src="https://hugstatic.blob.core.windows.net/assets/android-benq-amy_bbd9afbc0655ceb6da790a80fbd90290.png" -->
+                    <!-- class="preload" style="display:none;"> -->
+<!-- 
+            </div> -->
+            <!-- <div id="wowslider-container1">
+                <div class="ws_images"><ul>
+                    <li><img src="media/side-ad.png" alt="Cat" title="Cat" id="wows1_0"/>Cats are believed to have nine lives</li>
+                    <li><img src="media/side-ad3.png" alt="Raccoon" title="Raccoon" id="wows1_1"/>Raccoons are also kept as pets</li>
+                    <li><img src="media/btstrp.png" alt="Red Panda" title="Red Panda" id="wows1_2"/>Red Pandas feed mainly on bamboo</li>
+                    <li><img src="media/Mask Group 101.png" alt="Fennec fox" title="Fennec fox" id="wows1_3"/>Its distinctive feature is its large ears</li>
+                    <li><img src="media/web-advert.jpg" alt="Raccoon" title="Raccoon" id="wows1_1"/>Raccoons are also kept as pets</li>
+                </ul></div>
+                    <div class="ws_bullets"><div>
+                        <a href="#" title="Cat"><span><img src="media/side-ad.png" alt="Cat"/>1</span></a>
+                        <a href="#" title="Raccoon"><span><img src="media/side-ad3.png" alt="Raccoon"/>2</span></a>
+                        <a href="#" title="Red Panda"><span><img src="media/btstrp.png" alt="Red Panda"/>3</span></a>
+                        <a href="#" title="Fennec fox"><span><img src="media/Mask Group 101.png" alt="Fennec fox"/>4</span></a>
+                        <a href="#" title="Fennec fox"><span><img src="media/web-advert.jpg" alt="Fennec fox"/>4</span></a>
+                    </div></div>
+                <div class="ws_shadow"></div>
+                </div>	
+
+        </div> -->
+        <div id="widget1">
+                <div class="slideshow">
+                    <div class="mySlides"><img src="media/side-ad.png" alt="Cat"  id="widget1--img" class="widget-media media-type-img" /></div>
+                    <div class="mySlides"><img src="media/side-ad3.png" alt="Raccoon" title="Raccoon" id="widget1--img" class="widget-media media-type-img" /></div>
+                    <div class="mySlides"><img src="media/btstrp.png" alt="Red Panda" title="Red Panda" id="widget1--img" class="widget-media media-type-img" ></div>
+                    <div class="mySlides"><img src="media/Mask Group 101.png" alt="Fennec fox" title="Fennec fox" id="widget1--img"class="widget-media media-type-img" /></div>
+                </div>
+        </div>
+        </div>
+        <div id="zone-footer" class="zone zone-footer">
+            <svg id="text_ticker" width="100%" height="100%" style="">
+                <text dominant-baseline="middle" text-anchor="middle" alignment-baseline="central" font-size="5vmin"
+                    x="0" y="55%" dy="-.3em" fill="#fff">
+                    <tspan id="scrolling_texts" dominant-baseline="middle" text-anchor="middle"></tspan>
+
+                    <animate attributeName="x" from="100%" to="-100%" dur="10s" onend="footerTestScrollEnd();"
+                        repeatCount="10" fill="freeze">
+                </text>
+            </svg>
+            <!-- <svg width="100%" height="100%" viewBox="30 -50 600 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <path id="path">
+                       <animate attributeName="d" from="m0,110 h0" to="m0,110 h1100" dur="6.8s" begin="0s" repeatCount="indefinite"/>
+                   </path>
+                   <text font-size="15vmin" font-family="Montserrat" fill='hsla(36, 95%, 85%, 1)'>
+                       <textPath xlink:href="#path">I'm An Animated Typing Example && I'm All SVG.
+                   </textPath>
+                   </text>
+               </svg> -->
+        </div>
+    </div>
+    <!-- <script src="../js/test_multiple_zones.js"></script> -->
+    
+
+    <script type="text/javascript">
+        const zoneContainer = document.getElementById('fm-zones');
+        const footer = document.getElementById('zone-footer');
+        const textElement = document.getElementById('scrolling_texts');
+
+
+        // zoneContainer.classList.add("has-footer");
+
+
+        // testAllZones()
+
+        const texts = [
+            "🙏 Welcome to FOLLOWMEdia.",
+            "This is a a digital solution by Spark Technology.           ",
+            "Stay tuned. Product is active development!",
+            // "Bad News 4",
+            // "Good News 5",
+            // "Bad News 6",
+            // "Good News 7",
+            // "Bad News 8",
+        ];
+
+        const contents = [
+            // { uid: 'video-1', uri: 'https://hugstatic.blob.core.windows.net/assets/video-test-1_e07fc21a7a72e3d33478243bd75d7743.mp4' },
+            { uid: 'image-1', uri: 'https://hugstatic.blob.core.windows.net/assets/android-benq-amy_bbd9afbc0655ceb6da790a80fbd90290.png' },
+            { uid: 'image-2', uri: 'https://hugstatic.blob.core.windows.net/assets/android-nec-roberto_3f9b985e2214b59e3d1f296e69e86fdd.png' },
+            { uid: 'image-3', uri: 'https://hugstatic.blob.core.windows.net/assets/android-panasonic-pikachu_347af960f123f7c56f5f967882108bdf.png' },
+            { uid: 'image-4', uri: 'https://hugstatic.blob.core.windows.net/assets/brightsign-4.7-nelson_9fed77987aac013a712eed87adbcf0d9.png' },
+            { uid: 'image-5', uri: 'https://hugstatic.blob.core.windows.net/assets/chrome-os-krusty_99c97ad4680ccf06517b220b61327a5c.png' },
+            // { uid: 'video-2', uri: 'https://hugstatic.blob.core.windows.net/assets/video-test-2_e2ffa51f6a4473b815f39e7fb39239da.mp4' },
+            { uid: 'image-6', uri: 'https://hugstatic.blob.core.windows.net/assets/sssp-2.0-burns_2a17095aec4332358d91b47999862647.png' },
+            { uid: 'image-7', uri: 'https://hugstatic.blob.core.windows.net/assets/sssp-3.0-maggie_47dfc4c8c21b49c5d6f0ef1505ece49c.png' },
+            { uid: 'image-8', uri: 'https://hugstatic.blob.core.windows.net/assets/tizen-2.4-bart_96c02fbd2df936e8bdd0b345f8874224.png' },
+            { uid: 'image-9', uri: 'https://hugstatic.blob.core.windows.net/assets/tizen-3.0-apu_e300ee67c93b616ee36f51202234d429.png' },
+            // { uid: 'video-3', uri: 'https://hugstatic.blob.core.windows.net/assets/video-test-3_5cfd717df750e5b1d5dd8384c194a92d.mp4' },
+            { uid: 'image-10', uri: 'https://hugstatic.blob.core.windows.net/assets/webos-1.0-krabappel_60b520b38756789dce877dc2feac92fb.png' },
+            { uid: 'image-11', uri: 'https://hugstatic.blob.core.windows.net/assets/webos-2.0-farnsworth_413fc194707fdeb82052b3e2541fb50a.png' },
+            { uid: 'image-12', uri: 'https://hugstatic.blob.core.windows.net/assets/webos-3.0-zapp_951665bdb0a145befd8cf9382c93bd77.png' },
+            { uid: 'image-13', uri: 'https://hugstatic.blob.core.windows.net/assets/webos-3.2-bender_19043283cc5147bf441265fc494a0505.png' },
+        ];
+
+        
+
+        showTicker(texts, textElement, zoneContainer);
+
+        function footerTestScrollEnd() {
+            zoneContainer.classList.remove("has-footer");
+        }
+
+        
+
+        let mediaWidget = jQuery('#widget1') 
+
+        // displayMedia(contents, mediaWidget, zoneContainer);
+
+        // for (const content of contents) {
+        //     content.agruments = [content.uri, 0, 0, document.body.offsetWidth, document.body.offsetHeight];
+        // }
+        // for (let i = 0; true; i = (i + 1) % contents.length) {
+        //     const previousContent = contents[(i + contents.length - 1) % contents.length];
+        //     const currentContent = contents[i];
+        //     const nextContent = contents[(i + 1) % contents.length];
+
+        //     await playContent(widget, currentContent);
+        //     await stopContent(widget, previousContent);
+        //     await prepareContent(widget, nextContent);
+        //     await waitEndedContent(currentContent);
+        // }
+
+        $image1 = jQuery("#widget1--img")
+        if (contents.length) {
+            $image1.attr('src', contents[0].uri);
+            $image1.show();
+
+        }
+
+        
+
+
+    </script>
+    <script >
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 4000); // Change image every 4 seconds
+    }
+    </script>
+    
+</body>
+
+</html>

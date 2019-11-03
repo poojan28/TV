@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	 <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- news ticker link -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+		
+		<link rel="stylesheet" href="css/effect2.css">
+    <style type="text/css">
+    	html, body{
+    		padding: 0px;
+    		margin: 0px;
+    	}
+    	.upper{
+    		min-height: 80vh;
+    		background-color: #f0f0f0;
+    		object-fit: cover;
+    		padding-left: 0;
+    		margin-left: 0;
+    		padding-right: 0;
+    		margin-right: 0;
+    	}
+
+    	img{
+    		height: 80vh;
+    		width: 16.67vw;
+    		margin: 0;
+    		padding: 0;
+    		object-fit: cover;
+    		border: 5px solid black;
+    	}
+			.container-fluid{
+				height:100%;
+			}
+    </style>
+</head>
+<body>
+		<div class="container-fluid">
+		<div class="row">
+		<div class="col-10 upper">
+			<iframe width="1150" height="500" src="https://www.youtube.com/embed/KIVh4I3GM9g?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&mute=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+		</div>
+		<div class="col-2 cover" style="padding: 0;margin: 0;">
+			<img class="mySlides" src="media/btstrp.png"> 
+			<img class="mySlides" src="media/side-ad2.png">
+			<img class="mySlides" src="media/side-ad3.png">
+		</div>
+		</div>
+		
+		<div class="footer">
+			<div style="position: absolute; height: 15vh; background-color: #E35D5B;z-index: 100;width: 200px; color: white; font-weight: bold; top:0; text-align: center; ">
+				<h2 style="margin-top:2rem;">Breaking News</h2>
+            </div>
+            <div class="news-contain">
+                <h1 class="ml6 news-item">
+                    <span class="text-wrapper">
+                    <span class="letters">Beautiful Questions</span>
+                    </span>
+                </h1>
+            </div>
+            
+				<marquee behavior="scroll" direction="left" style="padding-top: 10px; color:black;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </marquee>
+			
+			</div>
+
+	<!-- Optional JavaScript -->
+	<script type="text/javascript">
+		var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1} 
+  x[slideIndex-1].style.display = "block"; 
+  setTimeout(carousel, 4000); // Change image every 4 seconds
+}
+	</script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+		<script src="js/jquery.newsticker.min.js"></script>
+		<script>
+
+// *************effect 2 new ticker***************************
+
+<script>
+    // Wrap every letter in a span
+$('.ml6 .letters').each(function(){
+  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: function(el, i) {
+      return 50 * i;
+    }
+  }).add({
+    targets: '.ml6',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>
+
+
+</body>
+</html>
